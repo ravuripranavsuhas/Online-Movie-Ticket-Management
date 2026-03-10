@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CineMax – Project Poster</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background: #f4f6fb;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .poster {
+    width: 900px;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.13);
+  }
+
+  /* ── HEADER ── */
+    .header {
+    background: linear-gradient(135deg, #0d0d1a 0%, #1a1a3e 60%, #0d0d1a 100%);
+    padding: 20px 32px 18px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; left: -40px; right: -40px; bottom: -40px;
+    background: radial-gradient(ellipse at 30% 50%, rgba(229,57,53,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, rgba(255,165,0,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .klu-top-logo {
+    margin-bottom: 10px;
+  }
+  .klu-top-logo img {
+    height: 80px;
+    width: auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 6px 14px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+  }
+  .header-title-main {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(229,57,53,0.4);
+    margin-bottom: 4px;
+  }
+  .header-title-main span { color: #ff6f00; }
+  .header-subtitle-main {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .cinemax-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(229,57,53,0.4);
+    margin-bottom: 4px;
+  }
+  .cinemax-title span { color: #ff6f00; }
+  .logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(229,57,53,0.4);
+  }
+  .logo-text span { color: #ff6f00; }
+  .header-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .header-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #e53935, #ff6f00);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 5px 22px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ── BODY ── */
+  .body { padding: 22px 26px 18px; background: #f7f8fc; }
+
+  /* Abstract + Architecture row */
+  .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    border: 1.5px solid #e8eaf0;
+  }
+
+  .card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .orange { background: #fff3e0; color: #e65100; }
+  .teal   { background: #e0f2f1; color: #00695c; }
+  .blue   { background: #e3f2fd; color: #0d47a1; }
+  .purple { background: #f3e5f5; color: #6a1b9a; }
+  .green  { background: #e8f5e9; color: #2e7d32; }
+  .red    { background: #fce4ec; color: #b71c1c; }
+  .indigo { background: #e8eaf6; color: #283593; }
+
+  .card p, .card li {
+    font-size: 12.5px;
+    color: #444;
+    line-height: 1.65;
+  }
+  .card p strong { color: #222; }
+
+  /* Architecture diagram */
+  .arch-diagram {
+    background: #0d1b2a;
+    border-radius: 8px;
+    padding: 14px;
+    margin-top: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    color: #80cbc4;
+    line-height: 1.6;
+    position: relative;
+  }
+  .arch-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .arch-node {
+    background: #1e3a5f;
+    border: 1.5px solid #2980b9;
+    color: #e3f2fd;
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-align: center;
+    width: 80%;
+    letter-spacing: 0.5px;
+  }
+  .arch-node.highlight { background: #e53935; border-color: #ff6f00; color: #fff; }
+  .arch-arrow {
+    color: #ff6f00;
+    font-size: 14px;
+    line-height: 1;
+  }
+  .arch-label {
+    font-size: 9px;
+    color: #78909c;
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+  }
+
+  /* Features */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .feature-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px 14px;
+    border: 1.5px solid #e8eaf0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .feature-icon { font-size: 20px; margin-bottom: 5px; }
+  .feature-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #1a1a3e;
+    margin-bottom: 4px;
+  }
+  .feature-desc { font-size: 11px; color: #666; line-height: 1.5; }
+
+  /* CO Implementation */
+  .section-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #1a1a3e;
+    text-transform: uppercase;
+    margin: 4px 0 12px;
+    position: relative;
+  }
+  .section-heading::before,
+  .section-heading::after {
+    content: '◆';
+    color: #e53935;
+    margin: 0 10px;
+    font-size: 9px;
+  }
+
+  .co-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+
+  .co-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 13px 15px;
+    border: 1.5px solid #e8eaf0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .co-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11.5px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .co-badge {
+    background: linear-gradient(90deg, #e53935, #ff6f00);
+    color: #fff;
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .co-list { list-style: none; }
+  .co-list li {
+    font-size: 11.5px;
+    color: #444;
+    padding: 2px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    line-height: 1.5;
+  }
+  .co-list li::before { content: '✔'; color: #e53935; font-size: 10px; margin-top: 2px; flex-shrink: 0; }
+
+  /* Code block */
+  .code-block {
+    background: #0d1b2a;
+    border-radius: 7px;
+    padding: 8px 12px;
+    margin-top: 7px;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    color: #80cbc4;
+    line-height: 1.7;
+    overflow: hidden;
+  }
+  .code-block .kw { color: #ff8a65; }
+  .code-block .fn { color: #ffe082; }
+  .code-block .str { color: #a5d6a7; }
+  .code-block .cmt { color: #546e7a; }
+
+  /* Conclusion */
+  .conclusion-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: center;
+  }
+  .conclusion-card {
+    background: linear-gradient(135deg, #fff8e1, #fff3e0);
+    border-radius: 10px;
+    padding: 14px 18px;
+    border: 1.5px solid #ffe0b2;
+  }
+
+  /* Footer */
+  .footer {
+    background: linear-gradient(135deg, #0d0d1a, #1a1a3e);
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-tech {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .tech-badge {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 10.5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+  }
+  .tech-badge.accent { background: linear-gradient(90deg, #e53935, #ff6f00); border: none; }
+  .footer-info {
+    text-align: right;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .footer-info .name {
+    font-size: 15px;
+    font-weight: 800;
+    color: #fff;
+  }
+  .footer-info .roll {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 2px;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1.5px dashed #e0e0e0;
+    margin: 14px 0;
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="klu-top-logo">
+      <img src="data:image/png;base64,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" alt="KLU Bachupally Logo">
+    </div>
+    <div class="header-title-main">🎬 CineMax</div>
+    <div class="header-subtitle-main">Online Movie Ticket Booking System</div>
+    <div class="badge">Project Based Learning from FWD</div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- Abstract + Architecture -->
+    <div class="row-2">
+      <div class="card">
+        <div class="card-title orange">Abstract</div>
+        <p>
+          The <strong>CineMax Online Movie Ticket Booking System</strong> is a web application developed using 
+          <strong>HTML, CSS, and JavaScript</strong> that simplifies the process of booking movie tickets. 
+          Users can view available movies, select showtimes, choose seats, and confirm bookings through a 
+          visually interactive interface. The platform eliminates long queues at theatres and provides a 
+          convenient digital solution for ticket reservations — demonstrating how front-end technologies can 
+          build a fully functional booking system with <strong>dynamic UI and booking logic</strong>.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-title teal">System Architecture</div>
+        <div class="arch-box">
+          <div class="arch-node" style="background:#1a237e;border-color:#3f51b5;">👤 User / Web Browser</div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-node highlight">🎨 Frontend UI · HTML / CSS</div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-node" style="background:#1b5e20;border-color:#4caf50;color:#e8f5e9;">⚙️ JavaScript App Logic</div>
+          <div class="arch-label">Login · Movie Render · Booking · Seat Selection</div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-node" style="background:#4a148c;border-color:#9c27b0;color:#f3e5f5;">🗄 Data Storage · Local Arrays / Objects</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Features -->
+    <div class="section-heading">Key Features</div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎥</div>
+        <div class="feature-title">Movie Listing</div>
+        <div class="feature-desc">Displays movies with posters, ratings, and language info dynamically</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔐</div>
+        <div class="feature-title">User Authentication</div>
+        <div class="feature-desc">Login & signup with user session handling</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎟</div>
+        <div class="feature-title">Ticket Booking</div>
+        <div class="feature-desc">Select theatre, showtime & number of tickets</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💺</div>
+        <div class="feature-title">Seat Selection</div>
+        <div class="feature-desc">Interactive seat layout — blocks unavailable seats</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📄</div>
+        <div class="feature-title">Booking Confirmation</div>
+        <div class="feature-desc">Summary with movie, seats, date, and price</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <div class="feature-title">Responsive UI</div>
+        <div class="feature-desc">Works across mobile, tablet, and desktop</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- CO-WISE IMPLEMENTATION -->
+    <div class="section-heading">CO-Wise Implementation</div>
+
+    <div class="co-grid">
+      <!-- CO1 -->
+      <div class="co-card">
+        <div class="co-title">
+          <span class="co-badge">CO1</span>
+          <span style="color:#0d47a1;">HTML, CSS &amp; Responsive Design</span>
+        </div>
+        <ul class="co-list">
+          <li>Responsive movie grid &amp; booking UI layout</li>
+          <li>Semantic HTML for movie cards &amp; forms</li>
+          <li>CSS Flexbox / Grid for seat &amp; card layouts</li>
+          <li>Styled login / signup modal forms</li>
+        </ul>
+        <div class="code-block">
+<span class="cmt">/* Movie grid layout */</span>
+<span class="kw">.movies-grid</span> {
+  display: <span class="str">grid</span>;
+  grid-template-columns: <span class="str">repeat(auto-fill, 160px)</span>;
+  gap: <span class="str">16px</span>;
+}</div>
+      </div>
+
+      <!-- CO2 -->
+      <div class="co-card">
+        <div class="co-title">
+          <span class="co-badge" style="background:linear-gradient(90deg,#7b1fa2,#e53935);">CO2</span>
+          <span style="color:#6a1b9a;">JS Essentials · Movie Data &amp; Rendering</span>
+        </div>
+        <ul class="co-list">
+          <li>Movies stored in JavaScript arrays with objects</li>
+          <li>Dynamic rendering of movie cards via DOM</li>
+          <li>Star rating display per movie</li>
+        </ul>
+        <div class="code-block">
+<span class="kw">const</span> <span class="fn">MOVIES</span> = [
+  {title:<span class="str">"Dhurandhar"</span>, poster:<span class="str">"url"</span>},
+  {title:<span class="str">"Fauzi"</span>,      poster:<span class="str">"url"</span>}
+];
+<span class="kw">function</span> <span class="fn">renderMovies</span>() {
+  moviesGrid.innerHTML = MOVIES
+    .map(m =&gt; movieCardHTML(m)).join(<span class="str">""</span>);
+}</div>
+      </div>
+
+      <!-- CO3 -->
+      <div class="co-card">
+        <div class="co-title">
+          <span class="co-badge" style="background:linear-gradient(90deg,#e53935,#c62828);">CO3</span>
+          <span style="color:#b71c1c;">User Auth &amp; Booking Initialization</span>
+        </div>
+        <ul class="co-list">
+          <li>Login system with email &amp; password validation</li>
+          <li>Session flag to restrict booking to logged-in users</li>
+          <li>Booking object initialized on movie selection</li>
+        </ul>
+        <div class="code-block">
+<span class="kw">function</span> <span class="fn">login</span>() {
+  <span class="kw">if</span>(email===userData.email &amp;&amp;
+     pass===userData.pass) {
+    loggedIn = <span class="str">true</span>;
+  }
+}
+<span class="kw">function</span> <span class="fn">startBooking</span>(movie, theatre) {
+  booking = {movie, theatre, seats:[]};
+}</div>
+      </div>
+
+      <!-- CO4 -->
+      <div class="co-card">
+        <div class="co-title">
+          <span class="co-badge" style="background:linear-gradient(90deg,#1565c0,#0288d1);">CO4</span>
+          <span style="color:#0d47a1;">DOM Events · Seat Selection &amp; Showtime</span>
+        </div>
+        <ul class="co-list">
+          <li>Interactive seat map — click to select / deselect</li>
+          <li>Prevents booking of already-taken seats</li>
+          <li>Showtime buttons update booking object via events</li>
+          <li>Dynamic total price calculation &amp; ticket summary</li>
+        </ul>
+        <div class="code-block">
+<span class="kw">function</span> <span class="fn">selectTime</span>(btn) {
+  booking.time = btn.textContent;
+}
+<span class="kw">function</span> <span class="fn">toggleSeat</span>(seat) {
+  <span class="kw">if</span>(seat.classList.contains(<span class="str">'taken'</span>)) <span class="kw">return</span>;
+  seat.classList.toggle(<span class="str">'selected'</span>);
+}</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Conclusion -->
+    <div class="section-heading">Conclusion &amp; Future Scope</div>
+    <div class="conclusion-row">
+      <div class="conclusion-card">
+        <ul class="co-list">
+          <li>Demonstrates core <strong>front-end web development</strong> — responsive UI, form handling, and dynamic interactivity.</li>
+          <li>Booking flow covers the full journey: browse → authenticate → choose seat → confirm — all in-browser without a backend.</li>
+          <li>Future scope: integrate a <strong>Node.js + Express.js backend</strong>, real-time seat reservation with WebSockets, online payment gateway, and AI-driven movie recommendations.</li>
+        </ul>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:52px; line-height:1.1;">🎟<br>🍿<br>🏆</div>
+      </div>
+    </div>
+
+  </div><!-- /body -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-tech">
+      <span class="tech-badge accent">🌐 HTML5</span>
+      <span class="tech-badge">CSS3</span>
+      <span class="tech-badge">JavaScript</span>
+      <span class="tech-badge">DOM Events</span>
+      <span class="tech-badge accent">⚡ Front-End Only</span>
+    </div>
+    <div class="footer-info">
+      <div class="name">Name: R.Pranav Suhas</div>
+      <div class="roll">Roll No: 2520030089</div>
+      <div class="roll">Cluster: 4</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
